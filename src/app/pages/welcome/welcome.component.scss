@@ -1,0 +1,88 @@
+.col-5{
+  width: 45%;
+  background-color: #fff;
+}
+
+.filter-form{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 5px 0;
+  background-color: #fff;
+  padding: 0 5px;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  height: 90%;
+  min-height: 745px;
+}
+
+.left{
+  nz-table{
+    height: 90%;
+    width: 100;
+  }
+  .info{
+    width: 100%;
+    display: flex;
+    font-weight: 700;
+    div{
+      margin: 0 5px;
+      .user{
+        color: rgb(218, 33, 33);
+      }
+      .update{
+        color: rgb(45, 182, 45);
+      }
+    }
+  }
+}
+
+.first-form{
+  width: 100%;
+  .main{
+    display: flex;
+    .btn{
+      box-shadow: unset;
+      button{
+        width: 100%;
+        margin: 5px;
+      }
+    }
+  }
+}
+
+.seccond-form{
+  .btn{
+    box-shadow: unset;
+    button{
+      margin: 0 5px;
+    }
+  }
+}
+
+
+.input-form{
+  display: flex;
+  margin: 5px 0;
+  label{
+    width: 30%;
+  }
+  input{
+    width: 70%;
+  }
+}
+
+.right{
+  nz-table{
+    height: 55%;
+  }
+
+  .form-basic{
+    width: 100%;
+    height: 45%;
+  }
+}

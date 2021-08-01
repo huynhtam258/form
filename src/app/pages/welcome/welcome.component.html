@@ -1,0 +1,149 @@
+<section>
+  <div >
+    <div class="filter-form">
+      <span>
+        Ngày
+        <nz-select ngModel="lucy">
+          <nz-option nzValue="lucy" nzLabel="01/01/2020"></nz-option>
+        </nz-select> ~ <nz-select ngModel="lucy">
+      
+          <nz-option nzValue="lucy" nzLabel="31/12/2021"></nz-option>
+        </nz-select>
+      </span>
+
+      <nz-select ngModel="lucy">
+        <nz-option nzValue="lucy" nzLabel="Chọn chứng từ "></nz-option>
+      </nz-select>
+
+      <button nz-button nzType="primary">Tải dữ liệu</button>
+
+      <span>
+        <div>
+          <input type="checkbox" name="" id="" > Kiểm tra VAT
+        </div>
+        <div>
+          <input type="checkbox" name="" id=""> Kiểm tra kho
+        </div>
+      </span>
+
+      <span>
+        Ngày Nhập
+        <nz-select ngModel="lucy">
+          <nz-option nzValue="lucy" nzLabel="29/11/2020"></nz-option>
+        </nz-select>
+      </span>
+
+      <span>
+        <div>
+          <input type="checkbox" name="" id="" > Kiểm tra VAT
+        </div>
+      </span>
+
+      <nz-select ngModel="lucy">
+        <nz-option nzValue="lucy" nzLabel="Chứng từ h.toán"></nz-option>
+      </nz-select>
+
+
+      <div>
+        <input type="checkbox" name="" id=""> Kiểm tra kho
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5 left">
+      <nz-table class="parent-table" #basicTable [nzData]="listOfData">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th><input type="checkbox" name="" id=""></th>
+            <th>Ngày</th>
+            <th>Loại</th>
+            <th>Số chứng từ</th>
+            <th>Tiền</th>
+            <th>Nội dung</th>
+          </tr>a
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{data.stt}}</td>
+            <td><input type="checkbox" name="" id=""></td>
+            <td>{{ data.date }}</td>
+            <td>{{data.loai}}</td>
+            <td>{{ data.so_chung_tu }}</td>
+            <td>{{ data.money }}</td>
+            <td>{{ data.noi_dung}}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+      <div class="info">
+        <div>Người tạo: <span class="user">ADMIN</span></div>
+        <div>Người cập nhật: <span class="update">UYEN</span></div>
+      </div>
+    </div>
+    <div class="col-5 right">
+      <nz-table #basicTable1 [nzData]="listOfData1">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th><input type="checkbox" name="" id=""></th>
+            <th>NV</th>
+            <th>TK</th>
+            <th>MH</th>
+            <th>Tiền</th>
+            <th>Họ tên địa chỉ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr (click)="showChild(data)" *ngFor="let data of basicTable1.data">
+            <td>{{data.stt}}</td>
+            <td><input type="checkbox" name="" id=""></td>
+            <td>{{ data.nv }}</td>
+            <td>{{ data.tk }}</td>
+            <td>{{ data.maKH }}</td>
+            <td>{{data.money}}</td>
+            <td>{{ data.diachi }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+      <div class="form-basic">
+        <div class="first-form">
+          <div>
+            <label for="w3review">Nội dung chứng từ</label>
+            <br>
+            <div class="main">
+              <textarea id="w3review" name="w3review" rows="4" cols="80" placeholder="Nhập xi măng INSEE"></textarea>
+              <div class="btn">
+                <button nz-button nzType="primary">LK VAT</button>
+                <br>
+                <button nz-button nzType="primary">LK Kho</button>
+                <br>
+                <button nz-button nzType="primary">Xem kho</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="seccond-form">
+          <div class="btn">
+            <button nz-button nzType="primary">Lưu</button>
+            <button nz-button nzType="primary">Xóa</button>
+            <button nz-button nzType="primary">Exp Excel</button>
+          </div>
+          <div>
+            <div class="input-form">
+              <label for="">Tên tài khoản</label>
+              <input nz-input placeholder="Tên tài khoản" [(ngModel)]="value" />
+            </div>
+            <div class="input-form">
+              <label for="">__</label>
+              <input nz-input placeholder="__" [(ngModel)]="value" />
+            </div>
+            <div class="input-form">
+              <label for="">Tên KH</label>
+              <input nz-input placeholder="Tên KH" [(ngModel)]="value" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
